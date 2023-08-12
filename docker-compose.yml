@@ -3,12 +3,13 @@ version: "3.8"
 services:
   postgres:
     image: postgres:13.1
-    container_name: nestjs-database-connection-postgres-db
+    container_name: nestjs-db-connection-postgres-db
     restart: always
     environment:
       POSTGRES_USER: boghdady
       POSTGRES_PASSWORD: pass123
       POSTGRES_DB: nestjs-db
+
     volumes:
       - nestjs_postgres_db:/data/postgres
     ports:
@@ -16,7 +17,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: nestjs-database-connection-adminer
+    container_name: nestjs-db-connection-adminer
     restart: always
     ports:
       - 8080:8080
